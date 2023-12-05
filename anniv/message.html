@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/heart.png" type="image/x-icon">
+  <title>Happy Anniv</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+  background-color: #31304D;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 10px solid transparent;
+  border-image: 
+    linear-gradient(135deg, wheat 20%, transparent 20%, transparent 40%, wheat 40%, wheat 60%, transparent 60%, transparent 80%, wheat 80%) 1;
+  border-image-slice: 1;
+}
+
+
+.body {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 100px;
+}
+
+h2 {
+ animation: 1s blink linear infinite;
+ display: flex;
+ justify-content: center;
+}
+
+.birthdayCard {
+ position: relative;
+ width: 250px;
+ height: 350px;
+ cursor: pointer;
+ transform-style: preserve-3d;
+ transform: perspective(2500px);
+ transition: 1s;
+}
+
+.cardFront {
+ position: relative;
+ background-color: #EDDBC0;
+ width: 250px;
+ height: 350px;
+ overflow: hidden;
+ transform-origin: left;
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 30px 0 50px rgba(0, 0, 0, 0.4);
+ transition: .6s;
+}
+
+.happy {
+ font-family: Tahoma, sans-serif;
+ text-align: center;
+ margin: 30px;
+ background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+ transition: .1s;
+}
+
+.balloons {
+ position: absolute;
+}
+
+.balloonOne,
+.balloonTwo,
+.balloonThree,
+.balloonFour {
+ position: absolute;
+ width: 85px;
+ height: 95px;
+ border-radius: 50%;
+}
+
+.balloonOne {
+ background-color: #DC0000;
+ left: -10px;
+ top: 50px;
+}
+
+.balloonTwo {
+ background-color: #850000;
+ left: 50px;
+ top: 20px;
+}
+
+.balloonThree {
+ background-color: #FFDB89;
+ left: 110px;
+ top: 50px;
+}
+
+.balloonFour {
+ background-color: #FFF6C3;
+ left: 170px;
+ top: 20px;
+}
+
+.balloonOne:before,
+.balloonTwo:before,
+.balloonThree:before,
+.balloonFour:before {
+ content: "";
+ position: absolute;
+ width: 1px;
+ height: 155px;
+ background-color: #674747;
+ top: 95px;
+ left: 43px;
+}
+
+.balloonOne:after,
+.balloonTwo:after,
+.balloonThree:after,
+.balloonFour:after {
+ content: "";
+ position: absolute;
+ border-right: 7px solid transparent;
+ border-left: 7px solid transparent;
+ top: 94px;
+ left: 37px;
+}
+
+.balloonOne:after {
+ border-bottom: 10px solid #DC0000;
+}
+
+.balloonTwo:after {
+ border-bottom: 10px solid #850000;
+}
+
+.balloonThree:after {
+ border-bottom: 10px solid #FFDB89;
+}
+
+.balloonFour:after {
+ border-bottom: 10px solid #FFF6C3;
+}
+
+.cardInside {
+ position: absolute;
+ background-color: #EDDBC0;
+ width: 250px;
+ height: 350px;
+ z-index: -1;
+ left: 0;
+ top: 0;
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+p {
+ font-family: cursive;
+ margin: 15px 10px 10px 30px;
+ color: #333;
+}
+
+.name {
+ position: absolute;
+ left: 150px;
+ /* top: 200px; */
+ color: #333;
+ text-decoration: underline;
+}
+
+.back {
+ font-family: Tahoma, sans-serif;
+ color: #333;
+ text-align: center;
+ margin: 30px;
+ outline-color: #333;
+ outline-style: dashed;
+}
+
+.birthdayCard:hover {
+ transform: perspective(2500px) rotate(5deg);
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.birthdayCard:hover .cardFront {
+ transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .happy {
+ visibility: hidden;
+}
+
+@keyframes blink {
+ 0% {
+  color: white;
+ }
+
+ 20% {
+  color: yellow;
+ }
+
+ 40% {
+  color: greenyellow;
+ }
+
+ 60% {
+  color: red;
+ }
+
+ 80% {
+  color: hotpink;
+ }
+
+ 100% {
+  color: blue;
+ }
+}
+
+.image-container {
+    position: absolute;
+    margin-top: 500px; /* Adjust the top margin as needed */
+    margin-left: 500px; /* Adjust the left margin as needed */
+    transform: rotate(15deg);
+  }
+
+
+</style>
+<body>
+<div class="body">
+ <div class="birthdayCard">
+<div class="cardFront"><h3 class="happy">HAPPY ANNIVERSARY</h3>
+<div class="balloons">
+    <div class="balloonOne"></div>
+    <div class="balloonTwo"></div>
+    <div class="balloonThree"></div>
+    <div class="balloonFour"></div>
+  </div>
+  </div>
+<div class="cardInside">
+    <h3 class="back">HAPPY 4TH ANNIVERSARY</h3>
+    <p contenteditable="true">Dear Mamu,</p> 
+    <p contenteditable="true">It has been a year of love, laughter, and getting to know each other. I am most willing to do these
+        for the rest of my life. Let's enjoy our 4 years of love.
+    </p>
+    <p contenteditable="true" class="name">Papu Pogi</p>
+  </div>
+</div>
+<div class="image-container">
+    <img src="anniv1.png" alt="anniv1" width="200">
+  </div>
+</div>
+  <script src="main.js"></script> 
+</body>
+</html>
